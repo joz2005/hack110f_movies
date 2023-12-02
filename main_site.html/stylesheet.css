@@ -56,6 +56,8 @@ img.moviescreen {
 .video {
     position: absolute;
     left: 20vw;
-    top: 12vw;
-
+    top: 8vw;
+    width: 60vw;
+    height: 22vw;
+    border-radius: 1vw;
 }

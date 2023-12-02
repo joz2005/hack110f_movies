@@ -71,6 +71,7 @@ img.moviescreen {
     border-radius: 20px;
     width: 12vw;
     height: 4vw;
+    font-size: 1.5vw;
     background-color: red;
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

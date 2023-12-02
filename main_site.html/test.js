@@ -3,6 +3,10 @@ let person = {
     age: 15
 }
 
+let movie_data = {
+    1 : ['the godfather', 'youtube.com']
+}
+
 console.log("Hello, " + person.name);
 
 function buttonPressed() {

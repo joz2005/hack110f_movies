@@ -1,12 +1,18 @@
+body { background-color: #EEE2DE; }
+
 h1 {
     font-size: 10vw;
     text-align: center;
+    color: #EA906C;
+    
 }
 
 img.movie_theater_gif {
     position: relative;
     left: 14vw;
-    border: 1vw solid #333
+    border: 1vw solid;
+    border-color: #2B2A4C;
+     
 }
 
 
@@ -16,7 +22,7 @@ button.Comedy {
     left: 26vw;
     width: 30vw;
     height: 7vw;
-    top: -20vw;
+    top: -24vw;
     padding: 0.6em 2em;
     border: none;
     outline: none;
@@ -88,7 +94,7 @@ button.Action {
     font-size: 36px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     left: -4vw;
-    top: -10vw;
+    top: -14vw;
     width: 30vw;
     height: 7vw;
     padding: 0.6em 2em;
@@ -162,7 +168,7 @@ button.Horror {
     font-size: 36px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     left: 60vw;
-    top: -6.5vw;
+    top: -10.5vw;
     width: 30vw;
     height: 7vw;
     padding: 0.6em 2em;

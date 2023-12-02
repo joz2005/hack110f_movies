@@ -34,6 +34,22 @@ img.moviescreen {
     height:8vw;
 }
 
+.video {
+    left: 10%;
+    right: 10%;
+    top: 10%;
+    
+    position: absolute;
+}
+
+.video {
+    left: 10%;
+    right: 10%;
+    top: 10%;
+    
+    position: absolute;
+}
+
 .right-choice-button {
     background-color: red;
     color: black;

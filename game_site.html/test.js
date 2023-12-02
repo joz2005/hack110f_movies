@@ -6,11 +6,10 @@ let person = {
 }
 
 let movie_data = {
-    1 : ['the godfather', 'youtube.com'],
-    2 : ['endgame', 'roblox.com'],
-    3 : ['deadpool', 'minecraft.com'],
-    4 : ['infinity war', 'google.com'],
-    5: ['train to busan', 'jlpt.com']
+    1 : ['Your Name', 'https://www.youtube.com/embed/98H7ZjDrbcA?si=G2kZMnuS-ZzXJ4NP&amp;controls=0'],
+    2 : ['Home Alone', 'https://www.youtube.com/embed/5O60LjTtfaY?si=DJHbNtOpth7niNPm&amp;controls=0'],
+    3 : ['Forrest Gump', 'https://www.youtube.com/embed/Rn5SwEp4CaE?si=Jhg-5LBNVP4qsWuL&amp;controls=0'],
+    4 : ['China Man', 'https://www.youtube.com/embed/G95b3ji-tek?si=8MHZDwnJtkLqgfAC&amp;start=5']
 }
 
 let button_choices = {
@@ -30,6 +29,7 @@ function changeMovie() {
         next_movie = Math.floor(Math.random() * Object.keys(movie_data).length) + 1;
     }
     current_movie = next_movie;
+    document.querySelector('.video').src = String(movie_data[current_movie][1])
     document.getElementById("titleText").innerHTML = movie_data[current_movie][0];
     changeButtons(current_movie)
 }
@@ -43,7 +43,7 @@ function changeButtons(exclude) {
     let temp1 = -1;
     let temp2 = -1;
     while ((temp1 === -1) || (temp1 === exclude)) {
-        temp1 = randomIntFromInterval(1, Object.keys(movie_data).length);
+        temp1 = Math.floor(Math.random() * Object.keys(movie_data).length) + 1;
     }
     while ((temp2 === -1) || (temp2 === exclude) || (temp2 === temp1)) {
         temp2 = randomIntFromInterval(1, Object.keys(movie_data).length);

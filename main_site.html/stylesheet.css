@@ -18,6 +18,9 @@ img.moviescreen {
 }
 
 .left-choice-button {
+    position: relative;
+    top: 2vw;
+    left: 15vw;
     background-color: red;
     color: black;
     border: none;
@@ -26,15 +29,20 @@ img.moviescreen {
 }
 
 .middle-choice-button {
+    position: relative;
+    top: 2vw;
+    left: 25vw;
     background-color: red;
     color: black;
     border: none;
-    text-align: center;
     width:16vw;
     height:8vw;
 }
 
 .right-choice-button {
+    position: relative;
+    top: 2vw;
+    left: 35vw;
     background-color: red;
     color: black;
     border: none;

@@ -1,6 +1,7 @@
 body { background-color: #EEE2DE; }
 
 h1 {
+    margin-top: auto;
     font-size: 10vw;
     text-align: center;
     color: #EA906C;

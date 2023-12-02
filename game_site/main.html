@@ -9,6 +9,13 @@
     <script src = "test.js"></script>
 </head>
 <body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get("category");
+            change_data(category);
+            window.onload = changeMovie();
+        }) </script>
     <h1 id="titleText">Guess the Movie!</h1>
     <img class="moviescreen" src="pictures/moviescreen.jpg" alt="moviescreen" >
     <button class="left-choice-button" onclick="buttonPressed(1)">Test</button>
@@ -16,7 +23,6 @@
     <button class="right-choice-button" onclick="buttonPressed(3)">Test</button>
     <iframe class="video" width="560" height="300" src="https://www.youtube.com/embed/G95b3ji-tek?si=8MHZDwnJtkLqgfAC&amp;start=5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <script> window.onload = changeMovie() </script>
-
     <a href="../menu_site/menu.html" target="_self">
         <button class="back">Back</button>
     </a>

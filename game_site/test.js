@@ -6,11 +6,29 @@ let person = {
     age: 15
 }
 
-let movie_data = {
-    1 : ['Your Name', 'https://www.youtube.com/embed/98H7ZjDrbcA?si=G2kZMnuS-ZzXJ4NP&amp;controls=0'],
-    2 : ['Home Alone', 'https://www.youtube.com/embed/5O60LjTtfaY?si=DJHbNtOpth7niNPm&amp;controls=0'],
-    3 : ['Forrest Gump', 'https://www.youtube.com/embed/Rn5SwEp4CaE?si=Jhg-5LBNVP4qsWuL&amp;controls=0'],
-    4 : ['China Man', 'https://www.youtube.com/embed/G95b3ji-tek?si=8MHZDwnJtkLqgfAC&amp;start=5']
+let movie_data = {}
+
+function change_data(type) {
+    if (type === 'comedy'){
+        movie_data = {
+        1 : ['Your Name', 'https://www.youtube.com/embed/98H7ZjDrbcA?si=G2kZMnuS-ZzXJ4NP&amp;controls=0'],
+        2 : ['Home Alone', 'https://www.youtube.com/embed/5O60LjTtfaY?si=DJHbNtOpth7niNPm&amp;controls=0'],
+        3 : ['Forrest Gump', 'https://www.youtube.com/embed/Rn5SwEp4CaE?si=Jhg-5LBNVP4qsWuL&amp;controls=0'],
+        4 : ['China Man', 'https://www.youtube.com/embed/G95b3ji-tek?si=8MHZDwnJtkLqgfAC&amp;start=5']
+        }
+    } else if (type === 'action') {
+        movie_data = {
+            1 : ['John Wick', 'https://www.youtube.com/embed/6qiKf6U_2Zo?si=sl5MfQYKY32o0PbR&amp;controls=0'],
+            2 : ['The Matrix', 'https://www.youtube.com/embed/6pI1dlH2Piw?si=_7RFvO3IqdIyKmE_&amp;controls=0'],
+            3 : ['Avengers: Endgame', 'https://www.youtube.com/embed/pAEPu9hC7t0?si=LIvpbqO_B3h0V_S9&amp;controls=0']
+        }
+    } else if (type === 'horror') {
+        movie_data = {
+            1 : ['The Conjuring', 'https://www.youtube.com/embed/RkQB7WJAsIQ?si=sPOTqv1i6MRlU5B9&amp;controls=0'],
+            2 : ['IT', 'https://www.youtube.com/embed/6HaA1w0tJWU?si=hbXiUMdg0hh0uGVs&amp;controls=0'],
+            3 : ['Train to Busan', 'https://www.youtube.com/embed/0FijESDWzxo?si=gFbwD2d-2Lk72-zJ&amp;controls=0']
+        }
+    }
 }
 
 function buttonPressed(button) {

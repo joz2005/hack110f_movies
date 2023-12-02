@@ -12,12 +12,6 @@ let movie_data = {
     4 : ['China Man', 'https://www.youtube.com/embed/G95b3ji-tek?si=8MHZDwnJtkLqgfAC&amp;start=5']
 }
 
-let button_choices = {
-    1 : 'left-choice-button',
-    2 : 'middle-choice-button',
-    3 : 'right-choice-button'
-}
-
 function buttonPressed() {
     alert("You pressed the button!");
     changeMovie();
@@ -40,15 +34,29 @@ function randomIntFromInterval(min, max) {
 }
 
 function changeButtons(exclude) {
-    let temp1 = -1;
-    let temp2 = -1;
-    while ((temp1 === -1) || (temp1 === exclude)) {
-        temp1 = Math.floor(Math.random() * Object.keys(movie_data).length) + 1;
+    let correctChoice = randomIntFromInterval(1, 3);
+    let incorrect1, incorrect2;
+
+    do {
+        incorrect1 = Math.floor(Math.random() * Object.keys(movie_data).length) + 1;
+    } while (incorrect1 === exclude);
+
+    do {
+        incorrect2 = Math.floor(Math.random() * Object.keys(movie_data).length) + 1;
+    } while (incorrect2 === exclude || incorrect2 === incorrect1);
+
+    // Assign choices based on the correctChoice
+    if (correctChoice === 1) {
+        document.getElementsByClassName("left-choice-button")[0].innerHTML = movie_data[exclude][0];
+        document.getElementsByClassName("middle-choice-button")[0].innerHTML = movie_data[incorrect1][0];
+        document.getElementsByClassName("right-choice-button")[0].innerHTML = movie_data[incorrect2][0];
+    } else if (correctChoice === 2) {
+        document.getElementsByClassName("left-choice-button")[0].innerHTML = movie_data[incorrect1][0];
+        document.getElementsByClassName("middle-choice-button")[0].innerHTML = movie_data[exclude][0];
+        document.getElementsByClassName("right-choice-button")[0].innerHTML = movie_data[incorrect2][0];
+    } else {
+        document.getElementsByClassName("left-choice-button")[0].innerHTML = movie_data[incorrect1][0];
+        document.getElementsByClassName("middle-choice-button")[0].innerHTML = movie_data[incorrect2][0];
+        document.getElementsByClassName("right-choice-button")[0].innerHTML = movie_data[exclude][0];
     }
-    while ((temp2 === -1) || (temp2 === exclude) || (temp2 === temp1)) {
-        temp2 = randomIntFromInterval(1, Object.keys(movie_data).length);
-    }
-    document.getElementsByClassName("left-choice-button")[0].innerHTML = movie_data[temp1][0];
-    document.getElementsByClassName("middle-choice-button")[0].innerHTML = movie_data[temp2][0];
-    document.getElementsByClassName("right-choice-button")[0].innerHTML = movie_data[exclude][0]
 }

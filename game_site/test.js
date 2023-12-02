@@ -1,5 +1,6 @@
 let current_movie = 0
 let next_movie = 0
+let correctChoice = 0
 let person = {
     name: 'timothy',
     age: 15
@@ -12,29 +13,40 @@ let movie_data = {
     4 : ['China Man', 'https://www.youtube.com/embed/G95b3ji-tek?si=8MHZDwnJtkLqgfAC&amp;start=5']
 }
 
-function buttonPressed() {
+function buttonPressed(button) {
     alert("You pressed the button!");
+    check_if_correct(Number(button));
     changeMovie();
     alert(movie_data[current_movie][0]);
 }
 
+function check_if_correct(userChoice) {
+    if (userChoice === correctChoice) {
+        alert("Correct Choice!");
+    }
+    else {
+        alert("Incorrect Choice! Answer was " + (movie_data[current_movie][0]));
+    }
+}
+
 function changeMovie() {
+    console.log("ok");
     while (next_movie === current_movie) {
         next_movie = Math.floor(Math.random() * Object.keys(movie_data).length) + 1;
     }
     current_movie = next_movie;
-    document.querySelector('.video').src = String(movie_data[current_movie][1])
+    document.querySelector('.video').src = movie_data[current_movie][1]
     document.getElementById("titleText").innerHTML = movie_data[current_movie][0];
     changeButtons(current_movie)
 }
 
 function randomIntFromInterval(min, max) { 
-    // min and max included 
+    // min and max inclusive
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function changeButtons(exclude) {
-    let correctChoice = randomIntFromInterval(1, 3);
+    correctChoice = randomIntFromInterval(1, 3);
     let incorrect1, incorrect2;
 
     do {
@@ -45,7 +57,7 @@ function changeButtons(exclude) {
         incorrect2 = Math.floor(Math.random() * Object.keys(movie_data).length) + 1;
     } while (incorrect2 === exclude || incorrect2 === incorrect1);
 
-    // Assign choices based on the correctChoice
+    // Assign choices based on the value of correctChoice
     if (correctChoice === 1) {
         document.getElementsByClassName("left-choice-button")[0].innerHTML = movie_data[exclude][0];
         document.getElementsByClassName("middle-choice-button")[0].innerHTML = movie_data[incorrect1][0];
